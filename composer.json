@@ -1,0 +1,27 @@
+{
+    "name": "lushdigital/microservice-metrics",
+    "description": "Prometheus style metrics for microservices building on the official library",
+    "keywords": ["framework", "laravel", "lumen", "microservice","metrics","prometheus","redis"],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Gabor Csikos",
+            "email": "gabor.csikos@lush.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/lumen-framework": "^5.3",
+        "jimdo/prometheus_client_php": "^0.9.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LushDigital\\MicroServiceMetrics\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}

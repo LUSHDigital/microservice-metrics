@@ -4,7 +4,7 @@
  * Contains \LushDigital\MicroServiceCore\MicroServiceServiceProvider;
  */
 
-namespace LushDigital\MicroServiceCore;
+namespace LushDigital\MicroServiceMetrics;
 
 use Illuminate\Support\ServiceProvider;
 use LushDigital\MicroServiceMetrics\Http\Controllers\MetricsController;

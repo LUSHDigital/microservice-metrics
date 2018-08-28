@@ -44,8 +44,8 @@ class MetricsMiddleware
         $httpRequestsTotal = $this->collectorRegistry->registerCounter('http', 'requests_total', 'request counter', ['service', 'code', 'path', 'method']);
         $httpRequestsTotal->incBy(1, [env('SERVICE_NAME'), $response->status(), $matchedRoute, $request->method()]);
 
-        $requestDuration = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']) * 1000, 2);
-        $httpRequestDurationMilliseconds = $this->collectorRegistry->registerHistogram('http', 'request_duration_milliseconds', 'histogram for better visiblity of service performance', ['service', 'code', 'path', 'method'], [50, 80, 100, 120, 150, 200, 300, 500, 800, 1000, 2000, 5000]);
+        $requestDuration = round((microtime(true) - $_SERVER['REQUEST_TIME_FLOAT']), 5);
+        $httpRequestDurationMilliseconds = $this->collectorRegistry->registerHistogram('http', 'request_duration_seconds', 'histogram for better visiblity of service performance', ['service', 'code', 'path', 'method'], [0.05, 0.08, 0.1, 0.12, 0.15, 0.2, 0.33, 0.5, 0.8, 1, 2, 5]);
         $httpRequestDurationMilliseconds->observe($requestDuration, [env('SERVICE_NAME'), $response->status(), $matchedRoute, $request->method()]);
     }
 
